@@ -1,9 +1,8 @@
-# Conference Submission Repository
+# Adversarial Perturbations Improve Generalization of Confidence Prediction in Medical Image Segmentation
 
-Adversarial Perturbations Improve Generalization of Confidence Prediction in Medical Image Segmentation
+Our work tackles the challenge of unreliable confidence predictions in medical image segmentation under domain shifts, such as variations across imaging devices. 
 
-
-[Link to Paper/Preprint](https://openreview.net/pdf?id=0BQ6JPGwZa)
+[MIDL 2025 Conference Paper](https://openreview.net/pdf?id=0BQ6JPGwZa)
 
 ## Table of Contents
 - [Installation](#installation)
@@ -36,4 +35,4 @@ Adversarial Perturbations Improve Generalization of Confidence Prediction in Med
 - License information
 
 ## Contact
-- For questions, contact: [email@example.com](mailto:email@example.com)
+- For questions, contact: lennartz (ät) cs.uni-bonn.de
