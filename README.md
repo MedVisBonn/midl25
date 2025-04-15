@@ -19,7 +19,7 @@ We introduce a straightforward adversarial training strategy that enhances the r
 ```bash
 git clone --branch deploy git@github.com:MedVisBonn/midl25.git
 ```
-2. Create a shared directory, adapt `docker/build.sh` and build the image 
+1. Create a shared directory and build the image 
 ```bash
 cd midl25/docker
 mkdir out
