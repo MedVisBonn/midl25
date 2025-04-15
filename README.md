@@ -1,6 +1,6 @@
 # Adversarial Perturbations Improve Generalization of Confidence Prediction in Medical Image Segmentation
 
-Our work tackles the challenge of unreliable confidence predictions in medical image segmentation under domain shifts, such as variations across imaging devices. 
+We introduce a straightforward adversarial training strategy that enhances the reliability of direct confidence prediction in medical image segmentation under domain shifts.
 
 [MIDL 2025 Conference Paper](https://openreview.net/pdf?id=0BQ6JPGwZa)
 
@@ -21,9 +21,8 @@ Our work tackles the challenge of unreliable confidence predictions in medical i
 - Instructions to run the code
 - Example commands and expected outputs
 
-## Data & Models
-- Description of datasets used
-- Links/instructions for pre-trained models
+## Data
+We evaluate our approach using two datasets: the [SAML Dataset](https://liuquande.github.io/SAML/) and the [MNMS-2 Dataset](https://www.ub.edu/mnms-2/). To work with these datasets, please adapt the paths in the configuration file located at `src/configs/data` to match your local environment. Any pre-processing is handled by the respective classes in `src/dataset`.
 
 ## Experiments & Results
 - Steps to replicate experiments
@@ -31,8 +30,7 @@ Our work tackles the challenge of unreliable confidence predictions in medical i
 - Instructions for reproducing plots/tables
 
 ## Citation & License
-- How to cite the paper
-- License information
+TBA
 
 ## Contact
 - For questions, contact: lennartz (ät) cs.uni-bonn.de
