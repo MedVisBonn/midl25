@@ -9,7 +9,7 @@ We introduce a straightforward adversarial training strategy that enhances the r
 ```bash
 git clone --branch deploy --single-branch git@github.com:MedVisBonn/midl25.git
 ```
-2. Build the image 
+2. Build the image -
 ```bash
 cd midl25/docker
 bash build.sh
