@@ -25,13 +25,13 @@ RUN pip install \
     torchvision==0.20.0a0 \
     matplotlib==3.9.2 \
     numpy==1.24.4 \
-    cupy-cuda12.3.0
+    cupy-cuda12x==12.3.0
 
 ## GIT setup
 WORKDIR /root/workspace
 RUN mv * nvidia || mkdir nvidia
 WORKDIR /root/workspace/repos
-RUN git clone git@github.com:MedVisBonn/midl25.git
+RUN git clone https://github.com/MedVisBonn/midl25.git
 RUN git clone https://github.com/deepmind/surface-distance.git
 RUN pip install surface-distance/
 

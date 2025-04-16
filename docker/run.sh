@@ -2,7 +2,6 @@
 
 docker run \
 	-it \
-	-v /path/to/.ssh:/root/.ssh \
 	--net=host \
 	--runtime=nvidia \
 	--ipc=host \
