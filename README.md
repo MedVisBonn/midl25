@@ -19,12 +19,12 @@ We introduce a straightforward adversarial training strategy that enhances the r
 ```bash
 git clone --branch deploy --single-branch git@github.com:MedVisBonn/midl25.git
 ```
-1. Build the image 
+2. Build the image 
 ```bash
 cd midl25/docker
 bash build.sh
 ```
-1. Create shared direotories for data other files, adapt `docker/run.sh` accordingly and create a container
+3. Create shared direotories for data and other files, adapt `docker/run.sh` accordingly and create a container
 ```bash
 bash run.sh
 ```
