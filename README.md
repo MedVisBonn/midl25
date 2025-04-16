@@ -15,17 +15,16 @@ We introduce a straightforward adversarial training strategy that enhances the r
   - [Contact](#contact) -->
 
 ## Installation
-1. Clone the deployment branch of this repo
+1. Clone the deployment branch of this repo (no code, only docker utils)
 ```bash
-git clone --branch deploy git@github.com:MedVisBonn/midl25.git
+git clone --branch deploy --single-branch git@github.com:MedVisBonn/midl25.git
 ```
-1. Create a shared directory and build the image 
+1. Build the image 
 ```bash
 cd midl25/docker
-mkdir out
 bash build.sh
 ```
-1. Adapt `docker/run.sh` and create a container
+1. Create shared direotories for data other files, adapt `docker/run.sh` accordingly and create a container
 ```bash
 bash run.sh
 ```
