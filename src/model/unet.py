@@ -132,7 +132,6 @@ class LightningSegmentationModel(L.LightningModule):
             to_onehot_y=False if binary_target else True,
         )
         self.dsc = DiceMetric(include_background=False, reduction="none")
-        self.hausdorff = HausdorffDistanceMetric(include_background=False, reduction="none", percentile=95)
         if self.metadata['unet']['out_channels'] == 1:
             num_classes = 2
         else:
@@ -225,13 +224,11 @@ class LightningSegmentationModel(L.LightningModule):
         predicted_segmentation = one_hot(outputs.squeeze(1), num_classes=num_classes).moveaxis(-1, 1)
         target_segmentation = one_hot(target.squeeze(1), num_classes=num_classes).moveaxis(-1, 1)
         dice = self.dsc(predicted_segmentation, target_segmentation).nanmean(-1).nan_to_num(0).cpu().detach()
-        hausdorff = self.hausdorff(predicted_segmentation, target_segmentation).nanmean(-1).nan_to_num(0).cpu().detach()
         surface_dice = self.sdsc(predicted_segmentation, target_segmentation).nanmean(-1).nan_to_num(0).cpu().detach()
         entropy = 1 - (entr(probs).sum(1).mean((-1, -2)) / log(tensor(num_classes)))
 
         metrics = {
             'dice': dice,
-            'hausdorff': hausdorff,
             'surface_dice': surface_dice,
             'entropy': entropy
         }

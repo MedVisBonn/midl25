@@ -14,21 +14,6 @@ from utils import (
     collect_eval_from_predictions,
 )
 
-# UNET_CKPTS = {
-#     "mnmv2": {
-#         'dropout-0-0': 'mnmv2_symphony_dropout-0-0_2025-01-14-15-20',
-#         'dropout-0-1': 'mnmv2_symphony_dropout-0-1_2025-01-14-15-19',
-#         'dropout-0-2': 'mnmv2_symphony_dropout-0-2_2025-01-14-15-18',
-#         'dropout-0-3': 'mnmv2_symphony_dropout-0-5_2025-01-14-15-20'
-#     },
-#     'pmri': {
-#         'dropout-0-0': 'pmri_runmc_dropout-0-0_2025-01-14-15-58',
-#         'dropout-0-1': 'pmri_runmc_dropout-0-1_2025-01-14-15-58',
-#         'dropout-0-2': 'pmri_runmc_dropout-0-2_2025-01-14-15-58',
-#         'dropout-0-5': 'pmri_runmc_dropout-0-5_2025-01-14-15-58'
-#     },
-# }
-
 UNET_CKPTS = {
     "mnmv2": 'mnmv2_symphony_dropout-0-1_2025-01-14-15-19',
     'pmri': 'pmri_runmc_dropout-0-1_2025-01-14-15-58',
@@ -47,11 +32,11 @@ def main(cfg):
     )
 
     # init model
-    ckpt = UNET_CKPTS[cfg.data.dataset] #[cfg.data.domain]
+    ckpt = UNET_CKPTS[cfg.data.dataset]
     cfg.unet.checkpoint_path = f'{cfg.trainer.root_dir}{cfg.unet.checkpoint_dir}{ckpt}.ckpt'
     unet = get_unet_module(
         cfg=cfg.unet,
-        metadata=OmegaConf.to_container(cfg.unet),
+        metadata=OmegaConf.to_container(cfg),
         load_from_checkpoint=True
     ).model
 
@@ -63,7 +48,6 @@ def main(cfg):
 
     print(OmegaConf.to_yaml(cfg))
     
-    # cfg.model.hausdorff_sigma = HAUSDORFF_SIGMAS[cfg.data.dataset][cfg.data.domain]
     model = get_score_prediction_module(
         data_cfg=cfg.data,
         model_cfg=cfg.model,
