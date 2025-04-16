@@ -2,7 +2,7 @@
 
 docker run \
 	-it \
-	-v /home/lennartz/.ssh:/root/.ssh \
+	-v /path/to/.ssh:/root/.ssh \
 	--net=host \
 	--runtime=nvidia \
 	--ipc=host \
